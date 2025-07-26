@@ -1,0 +1,277 @@
+body {
+    width: 98vw;
+    height: 160vh;
+    overflow: auto;
+    background-image: url("image18.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    
+}
+.main-content {
+    padding: 80px;
+    max-width: 1200px;
+    margin: auto;
+    
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.main-content form h1 {
+    text-align: center;
+    color: aliceblue;
+}
+label, select, button {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #ffffff;   
+}
+select {
+    padding: 5px;
+    font-size: 15px;
+    background-color: #02070c;
+    
+}
+h2 {
+    color: white;
+    
+}
+h2 span{
+    color: #da1111; 
+}
+button {
+    background-color: #02070c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid white;
+    font-family: 'Times New Roman';   
+}
+
+.recommendations {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    gap: 10px; 
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+.movie-card {
+    text-align: center;
+    min-width: 150px; 
+    background-color: rgb(8, 8, 8);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+    flex: 1; /* Distribute space evenly */
+    max-width: 150px;
+    
+}
+.movie-card:hover {
+    transform: scale(1.05);
+}
+.movie-card img {
+    width: 100%;
+    height: auto;
+}
+.movie-card img ::-webkit-scrollbar{
+    display: none;
+}
+.movie-card h3 {
+    font-size: 20px;
+    margin: 10px 0 5px;
+    color: #da1111;
+
+}
+.movie-card p {
+    font-size: 14px;
+    margin: 5px 10px;
+    color: #ffffff;
+}
+.movie-card p a {
+    color: #da1111;
+    font-weight: 1000;
+}
+form label {
+    color: aliceblue;
+}
+/* Navigation Bar */
+nav {
+     height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;       
+    top: 0;            
+    left: 0;
+    z-index: 1000; 
+  }
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+nav .home-link {
+    margin-left: auto;
+}
+
+nav a{
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+nav a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color:#da1111;
+    transition: 0.2s linear;
+}
+nav a:hover::before{
+    width: 100%;
+}
+
+nav a:hover{
+    color: #ff0000;
+}
+
+.logo{
+    color: rgb(226, 31, 31);
+    font-size: 2rem;
+    font-weight: bold;
+}
+.logo span{
+    
+    color: white;
+}
+.heading h1{
+    text-align: center;
+    color:#da1111 ;
+    margin: 3% auto;
+    text-decoration: underline;
+}
+
+/* Watch History & Liked Movies */
+ul {
+    list-style: none;
+    padding: 0;
+    color: white;
+    margin: 50px auto;
+}
+  
+ul li {
+    background: rgba(0, 0, 0, 0.8);
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+/* Account Page */
+.info {
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px;
+  font-weight: 100;
+  font-size: 150%;
+  background: rgba(0, 0, 0, 0.8);
+  height: fit-content;
+  width: 50%;
+  border-radius: 15px;
+
+}   
+.info p{
+color: #da1111;
+font-weight: 500;
+padding-top: 0%;
+}  
+button:hover {
+    background-color: #da1111;
+}
+/* feedback*/
+.feedback-section {
+    width: 50%;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 15px;
+    background-color:rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 2);
+    
+}
+
+.feedback-section h2  {
+    text-align: center;
+    color: #ff0000;
+}
+.feedback-section h3{
+    text-align: center;
+    color: #f50000;
+    text-align: left;
+}
+.feedback-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedback-section input, .feedback-section textarea, .feedback-section select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ffffff;
+    border-radius: 5px; 
+}
+
+
+.feedback-section button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border: 2px solid white;
+}
+
+.feedback-section button:hover {
+    background-color: #da1111;
+}
+
+.feedback-item {
+    background: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    color: #ccc;
+}
+
+
+html::-webkit-scrollbar {
+    display: none;
+}

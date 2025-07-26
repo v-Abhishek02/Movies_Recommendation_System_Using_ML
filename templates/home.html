@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    
+</head>
+<body>
+     <!--Navigation bar -->
+     <nav>
+        <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+            Movies <span>Recommendation System</span>
+        </div>
+            <a class="home-link" href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('history') }}">History</a>
+            <a href="{{ url_for('liked_movies') }}">Liked Movies</a>
+            <a href="{{ url_for('account') }}">Account</a>
+    </nav>
+            <!-- Main Content -->
+            <main class="main-content">
+                <form method="POST">
+                    
+                    <label for="movie">Select a Movie:</label>
+                    <select name="movie" id="movie">
+                        {% for movie in movie_list %}
+                            <option value="{{ movie }}" {% if movie == selected_movie %}selected{% endif %}>{{ movie }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit">Show Recommendations</button>
+                </form>
+    
+                {% if recommended_movies %}
+                    <h2><span>Recommendation for: </span>{{ selected_movie }}</h2>
+                    <div class="recommendations">
+                        {% for movie, poster, detail, trailer in zip(recommended_movies, posters, details, trailers) %}
+                            <div class="movie-card">
+                                <img src="{{ poster }}" alt="Poster">
+                                <h3>{{ detail.title }}</h3>
+                                <p><strong>Release Date:</strong> {{ detail.release_date }}</p>
+                                <p><strong>Rating:</strong> {{ detail.rating }}</p>
+                                <p><strong>Overview:</strong> {{ detail.overview }}</p>
+                                {% if trailer %}
+                                    <p><a href="{{ trailer }}" target="_blank">Watch Trailer</a></p>
+                                {% else %}
+                                    <p>Trailer not available</p>
+                                {% endif %}
+                                <form action="{{ url_for('home') }}" method="post">
+                                    <input type="hidden" name="movie_name" value="{{ detail.title }}">
+                                    <button type="submit">❤️ Like</button>
+                                </form>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </main>
+        </div>
+    </body>
+</html>

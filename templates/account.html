@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+            Movies <span>Recommendation System</span>
+        </div>
+        <a class="home-link" href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('history') }}">History</a>
+        <a href="{{ url_for('liked_movies') }}">Liked Movies</a>
+        <a href="{{ url_for('account') }}" class="active">Account</a>
+    </nav>
+
+    <div class="heading">
+        <h1>Account</h1>
+    </div>
+<!-- User Info -->
+    <div class="info">
+        <p>User Name : {{ current_user.name }}</p>
+        <p>Email Id : {{ current_user.email }}</p>
+        <form action="{{ url_for('logout') }}" method="get">
+            <button type="submit">Log Out</button>
+        </form>
+    </div>
+<!-- Feedback Form -->
+    <div class="feedback-section">
+        <h2>Feedback</h2>
+        <form action="/submit_feedback" method="post">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+    
+            <select name="rating" required>
+                <option value="1">Rating</option>
+                <option value="2">⭐  Star</option>
+                <option value="3">⭐⭐  Stars</option>
+                <option value="4">⭐⭐⭐  Stars</option>
+                <option value="5">⭐⭐⭐⭐  Stars</option>
+                <option value="6">⭐⭐⭐⭐⭐  Stars</option>
+            </select>
+    
+            <button type="submit">Submit Feedback</button>
+        </form>
+    <!-- Recent Feedback -->
+    <h3>Recent Feedback</h3>
+    <div id="feedback-list">
+        {% for feedback in feedbacks %}
+        <div class="feedback-item">
+            <h3>Name : {{ feedback[0] }}</h3> 
+            <p >User Email : {{ feedback[1] }}</p>
+            <p>Comment : "{{ feedback[2] }}"</p>
+            <p>Rating :
+                {% for _ in range(feedback[3]) %}
+                    ⭐
+                {% endfor %}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+</body>
+</html>
