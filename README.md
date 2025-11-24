@@ -67,8 +67,12 @@ Now, open your browser at `http://127.0.0.1:5000/`.
 ---
 
 ## 📷 **Screenshots**
+## Creating User
 ![image alt](https://github.com/v-Abhishek02/Movies_Recommendation_System_Using_ML/blob/9fd61ccc11606f15b2d3d777e4eb910b4101e882/IMG-20250312-WA0016.jpg)
+## Login User
 ![image alt](https://github.com/v-Abhishek02/Movies_Recommendation_System_Using_ML/blob/000d303652ca0c97911dd495e3e488425c3331ff/IMG-20250312-WA0017.jpg)
+## Recommendation of movies 
+![image alt](https://github.com/v-Abhishek02/Movies_Recommendation_System_Using_ML/blob/00bd9942dcb3eae99ae5289da8c8214231a9f6d6/IMG-20250312-WA0019.jpg)
 ---
 
 ## 📝 **Future Enhancements**
